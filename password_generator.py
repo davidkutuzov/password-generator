@@ -33,9 +33,17 @@ try:
     if length < 8:
         print("Password length must be at least 8.")
         exit()
+        
+    count = int(input("How many passwords do you want? "))
+
+    if count <= 0:
+        print("Number of passwords must be greater than 0.")
+        exit()
+
 except ValueError:
     print("Please enter a valid number.")
     exit()
-  
-password = generate_password(length)
-print("Your password: ", password)
+
+for _ in range(count):
+    password = generate_password(length)
+    print(password)
